@@ -1,0 +1,30 @@
+{
+  "features": [
+    "MF",
+    "Age",
+    "EDUC",
+    "SES",
+    "MMSE",
+    "CDR",
+    "eTIV",
+    "nWBV"
+  ],
+  "feature_labels": {
+    "MF": "Gender (0=Male, 1=Female)",
+    "Age": "Age (years)",
+    "EDUC": "Education Level (1-5)",
+    "SES": "Socioeconomic Status (1-5)",
+    "MMSE": "MMSE Score (0-30)",
+    "CDR": "CDR Score (0/0.5/1/2)",
+    "eTIV": "Total Intracranial Volume (cc)",
+    "nWBV": "Normalized Whole Brain Volume"
+  },
+  "train_size": 348,
+  "test_size": 88,
+  "knn_acc": 0.9545,
+  "dt_acc": 1.0,
+  "nb_acc": 1.0,
+  "knn_f1": 0.9543,
+  "dt_f1": 1.0,
+  "nb_f1": 1.0
+}
