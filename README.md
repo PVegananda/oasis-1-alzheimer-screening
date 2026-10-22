@@ -11,7 +11,26 @@ license: mit
 short_description: Machine learning screening application for dementia risk using OASIS-1 clinical data
 ---
 
-# OASIS-1 Alzheimer Screening
+<p align="center">
+  <a href="https://github.com/PVegananda/oasis-1-alzheimer-screening">
+    <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" width="180" alt="OASIS-1 Alzheimer Screening">
+  </a>
+</p>
+
+<h1 align="center">OASIS-1 Alzheimer Screening</h1>
+
+<p align="center">
+  Machine learning screening application for dementia risk using clinical data from the OASIS-1 dataset.
+</p>
+
+<p align="center">
+  <a href="https://github.com/PVegananda/oasis-1-alzheimer-screening"><img src="https://img.shields.io/github/repo-size/PVegananda/oasis-1-alzheimer-screening?label=Repository%20size" alt="Repository size"></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white" alt="Python 3.10"></a>
+  <a href="https://www.gradio.app/"><img src="https://img.shields.io/badge/Gradio-5.0-FF7C00?logo=gradio&logoColor=white" alt="Gradio 5.0"></a>
+  <a href="https://scikit-learn.org/"><img src="https://img.shields.io/badge/scikit--learn-1.8-F7931E?logo=scikit-learn&logoColor=white" alt="scikit-learn 1.8"></a>
+  <a href="https://huggingface.co/"><img src="https://img.shields.io/badge/Deployment-Hugging%20Face-FFD21E?logo=huggingface&logoColor=black" alt="Hugging Face deployment"></a>
+  <img src="https://img.shields.io/badge/License-MIT-111827" alt="MIT License">
+</p>
 
 An educational machine learning application for screening dementia risk from clinical data in the OASIS-1 dataset. The application provides an interactive Gradio interface and compares predictions from three classification models: K-Nearest Neighbors, Decision Tree, and Gaussian Naive Bayes.
 
