@@ -1,6 +1,5 @@
 ---
-title: OASIS-1 Alzheimer Detection System
-emoji: 🧠
+title: OASIS-1 Alzheimer Screening
 colorFrom: purple
 colorTo: blue
 sdk: gradio
@@ -9,59 +8,120 @@ python_version: "3.10"
 app_file: app.py
 pinned: true
 license: mit
-short_description: Deteksi dini demensia Alzheimer berbasis data klinis OASIS-1
+short_description: Machine learning screening application for dementia risk using OASIS-1 clinical data
 ---
 
-# 🧠 OASIS-1 Alzheimer Detection System
+# OASIS-1 Alzheimer Screening
 
-Sistem deteksi dini demensia Alzheimer berbasis **machine learning** menggunakan dataset klinis OASIS-1 dari **Washington University School of Medicine + Harvard University + NIH**.
+An educational machine learning application for screening dementia risk from clinical data in the OASIS-1 dataset. The application provides an interactive Gradio interface and compares predictions from three classification models: K-Nearest Neighbors, Decision Tree, and Gaussian Naive Bayes.
 
-## 📌 Deskripsi
+> This project is intended for academic, research, and portfolio purposes. It is not a medical diagnostic tool and must not replace an assessment by a qualified healthcare professional.
 
-Aplikasi ini memungkinkan pengguna memasukkan data klinis pasien secara manual dan mendapatkan prediksi status demensia (**Demented** atau **Nondemented**) menggunakan tiga algoritma klasifikasi.
+## Project Overview
 
-## 🤖 Algoritma yang Digunakan
+The application accepts selected demographic, cognitive, and brain-volume features, scales the input data, and returns a prediction with the selected model's confidence, accuracy, and F1-score.
 
-| Model | Accuracy | F1-Score |
-|-------|----------|----------|
-| KNN (k=5, Euclidean) | 95.45% | 95.43% |
+The project demonstrates an end-to-end machine learning workflow:
+
+1. Preparing clinical features from the OASIS-1 dataset.
+2. Scaling input data consistently with the training pipeline.
+3. Training and evaluating multiple classification algorithms.
+4. Persisting trained models with Joblib.
+5. Serving predictions through a lightweight Gradio web interface.
+
+## Technology Stack
+
+| Category | Technology |
+| --- | --- |
+| Language | Python 3.10 |
+| User interface | Gradio 5.0 |
+| Machine learning | scikit-learn 1.8 |
+| Numerical computing | NumPy 1.26 |
+| Model persistence | Joblib |
+| Dataset | OASIS-1 Cross-Sectional |
+| Deployment target | Hugging Face Spaces |
+
+## Model Performance
+
+| Model | Accuracy | F1-score |
+| --- | ---: | ---: |
+| K-Nearest Neighbors (k=5, Euclidean) | 95.45% | 95.43% |
 | Decision Tree (Gini) | 100.00% | 100.00% |
-| Naive Bayes (Gaussian) | 100.00% | 100.00% |
+| Gaussian Naive Bayes | 100.00% | 100.00% |
 
-## 📊 Dataset
+These metrics reflect the evaluation performed for this academic project. They should not be interpreted as clinical performance or as evidence of diagnostic accuracy in real-world settings.
 
-**OASIS-1 Cross-Sectional** (Open Access Series of Imaging Studies)
+## Input Features
 
-- **Sumber resmi:** https://sites.wustl.edu/oasisbrains/home/oasis-1/
-- **Institusi:** Washington University + Harvard University + NIH
-- **Subjek:** 436 individu usia 60–96 tahun
-- **Referensi:** Marcus, D. S., et al. (2007). *Journal of Cognitive Neuroscience*, 19(9), 1498–1507.
-
-## 🏥 Fitur Input
-
-| Fitur | Keterangan | Rentang |
-|-------|-----------|---------|
-| Gender | Jenis kelamin | Male / Female |
-| Age | Usia | 55–98 tahun |
-| EDUC | Tingkat pendidikan | 1 (SD) – 5 (S2+) |
-| SES | Status sosial ekonomi | 1 (tinggi) – 5 (rendah) |
-| MMSE | Mini Mental State Examination | 0–30 (27+ normal) |
+| Feature | Description | Expected range or format |
+| --- | --- | --- |
+| Gender | Patient gender | Male / Female |
+| Age | Patient age | 55–98 years |
+| EDUC | Education level | 1–5 |
+| SES | Socioeconomic status | 1–5 |
+| MMSE | Mini-Mental State Examination score | 0–30 |
 | CDR | Clinical Dementia Rating | 0 / 0.5 / 1 / 2 |
-| eTIV | Estimated Total Intracranial Volume | ~900–2000 cc |
-| nWBV | Normalized Whole Brain Volume | 0.60–0.90 |
+| eTIV | Estimated total intracranial volume | Approximately 900–2,000 cc |
+| nWBV | Normalized whole brain volume | Approximately 0.60–0.90 |
 
-## ⚠️ Disclaimer
+## Running Locally
 
-Aplikasi ini adalah **alat skrining akademis** berbasis ML untuk keperluan penelitian dan edukasi. **Bukan pengganti diagnosis medis profesional.** Konsultasikan hasil dengan dokter spesialis neurologi.
+### Requirements
 
-## 📚 Referensi Ilmiah
+- Python 3.10 or compatible
+- pip
 
-1. Marcus, D. S., et al. (2007). OASIS: Cross-sectional MRI Data. *J. Cognitive Neuroscience*, 19(9).
-2. Cabanillas-Carbonell & Zapata-Paulini (2025). Evaluation of ML for Alzheimer's. *Brain, Behavior and Immunity Integrative*. DOI: 10.1016/j.bbih.2025.100957
-3. Lazli, L. (2025). Improved Alzheimer Diagnosis with ML. *JMIRx Med*, 6:e60866.
-4. Sarica et al. (2023). Random Forest for Alzheimer's Neuroimaging. *Frontiers in Aging Neuroscience*.
+### Installation
 
-## 🎓 Proyek
+```bash
+git clone https://github.com/PVegananda/oasis-1-alzheimer-screening.git
+cd oasis-1-alzheimer-screening
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
 
-**UTS Pembelajaran Mesin — Universitas Dian Nuswantoro 2025/2026**
-Dosen: Junta Zeniarja, M.Kom
+On Windows, activate the virtual environment with:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+### Launch the application
+
+```bash
+python app.py
+```
+
+Open the local Gradio URL shown in the terminal, then enter the clinical features and select a model to generate a screening result.
+
+## Repository Structure
+
+| File | Description |
+| --- | --- |
+| `app.py` | Gradio interface and prediction workflow |
+| `UTS_ML_OASIS1_Complete.ipynb` | Data preparation, training, and evaluation notebook |
+| `scaler.joblib` | Fitted feature scaler |
+| `*_model.joblib` | Persisted KNN, Decision Tree, and Naive Bayes models |
+| `metadata.json` | Model evaluation metrics used by the interface |
+| `requirements.txt` | Python dependencies |
+
+## Dataset and References
+
+This project uses the OASIS-1 Cross-Sectional dataset from the Open Access Series of Imaging Studies.
+
+- Dataset source: [OASIS-1](https://sites.wustl.edu/oasisbrains/home/oasis-1/)
+- Marcus, D. S., et al. (2007). OASIS: Cross-sectional MRI data in young, middle aged, nondemented, and demented older adults. *Journal of Cognitive Neuroscience*, 19(9), 1498–1507.
+- Cabanillas-Carbonell, M., & Zapata-Paulini, J. (2025). Evaluation of machine learning methods for Alzheimer's disease. *Brain, Behavior, & Immunity - Integrative*, 100957.
+- Lazli, L. (2025). Improved Alzheimer's disease diagnosis with machine learning. *JMIRx Med*, 6, e60866.
+- Sarica, A., et al. (2023). Machine learning approaches for Alzheimer's disease neuroimaging. *Frontiers in Aging Neuroscience*.
+
+## Academic Context
+
+This project was developed as part of the Machine Learning Midterm Project at Universitas Dian Nuswantoro, academic year 2025/2026.
+
+- Lecturer: Junta Zeniarja, M.Kom
+
+## Disclaimer
+
+The predictions generated by this application are statistical outputs from machine learning models trained on a research dataset. They are not medical advice, a diagnosis, or a substitute for consultation with a neurologist or other qualified healthcare professional.
