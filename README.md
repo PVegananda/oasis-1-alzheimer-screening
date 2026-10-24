@@ -1,5 +1,5 @@
 ---
-title: OASIS-1 Alzheimer Screening
+title: OASIS-1 Dementia Risk Screening
 colorFrom: purple
 colorTo: blue
 sdk: gradio
@@ -12,19 +12,19 @@ short_description: Machine learning screening application for dementia risk usin
 ---
 
 <p align="center">
-  <a href="https://github.com/PVegananda/oasis-1-alzheimer-screening">
-    <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" width="180" alt="OASIS-1 Alzheimer Screening">
+  <a href="https://github.com/PVegananda/oasis-1-dementia-risk-screening">
+    <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" width="180" alt="OASIS-1 Dementia Risk Screening">
   </a>
 </p>
 
-<h1 align="center">OASIS-1 Alzheimer Screening</h1>
+<h1 align="center">OASIS-1 Dementia Risk Screening</h1>
 
 <p align="center">
   Machine learning screening application for dementia risk using clinical data from the OASIS-1 dataset.
 </p>
 
 <p align="center">
-  <a href="https://github.com/PVegananda/oasis-1-alzheimer-screening"><img src="https://img.shields.io/github/repo-size/PVegananda/oasis-1-alzheimer-screening?label=Repository%20size" alt="Repository size"></a>
+  <a href="https://github.com/PVegananda/oasis-1-dementia-risk-screening"><img src="https://img.shields.io/github/repo-size/PVegananda/oasis-1-dementia-risk-screening?label=Repository%20size" alt="Repository size"></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white" alt="Python 3.10"></a>
   <a href="https://www.gradio.app/"><img src="https://img.shields.io/badge/Gradio-5.0-FF7C00?logo=gradio&logoColor=white" alt="Gradio 5.0"></a>
   <a href="https://scikit-learn.org/"><img src="https://img.shields.io/badge/scikit--learn-1.8-F7931E?logo=scikit-learn&logoColor=white" alt="scikit-learn 1.8"></a>
@@ -93,8 +93,8 @@ These metrics reflect the evaluation performed for this academic project. They s
 ### Installation
 
 ```bash
-git clone https://github.com/PVegananda/oasis-1-alzheimer-screening.git
-cd oasis-1-alzheimer-screening
+git clone https://github.com/PVegananda/oasis-1-dementia-risk-screening.git
+cd oasis-1-dementia-risk-screening
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
